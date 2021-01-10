@@ -31,7 +31,15 @@ function Chat() {
                     </IconButton>
                 </div>
             </div>
-            <div className="chat__body"></div>
+            <div className="chat__body">
+                <p className="chat__message chat__reciever">
+                    <span className="chat__name">Areeb Ahmed</span>
+                    Hello! how are you?
+                    <span className="chat__timestamp">2:02 a.m</span>
+                </p>
+                
+                
+            </div>
             <div className="chat__footer"></div>
         </div>
     )
