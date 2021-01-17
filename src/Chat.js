@@ -16,6 +16,7 @@ function Chat() {
     const sendMessage = (e) => {
         e.preventDefault();
         console.log('You typed >>> ', input);
+        setInput("");
     };
 
     return (
@@ -46,7 +47,9 @@ function Chat() {
                 </p>
             </div>
             <div className="chat__footer">
+                <IconButton>
                 <InsertEmoticon/>
+                </IconButton>
                 <form>
                     <input 
                     value={input} 
@@ -55,7 +58,9 @@ function Chat() {
                     placeholder="Type a message"/>
                     <button onClick={sendMessage} type="submit" >Send a message</button>
                 </form>
+                <IconButton>
                 <MicIcon/>
+                </IconButton>
             </div>
         </div>
     )
