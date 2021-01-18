@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import './App.css';
 import Sidebar from "./Sidebar";
 import Chat from "./Chat"
@@ -7,22 +7,30 @@ import { BrowserRouter as Router,
 
 
 function App() {
+
+  const [user, setUser] = useState(null);
+
   return (
     //BEM naming convention 
     <div className="app">
-      <div className="app__body">
+      {!user ? (
+        <h1>LOGIN</h1>
+      ):(
+        <div className="app__body">
         <Router>
+          <Sidebar />
           <Switch>
-            <Route path="/app">
-              <Sidebar />
+            <Route path="/rooms/:roomId">
               <Chat />
             </Route>
             <Route path="/">
-              <h1>Home Screen</h1>
+            <Chat />
             </Route>
           </Switch>
         </Router>
       </div>
+      )}
+      
     </div>
   );
 }
